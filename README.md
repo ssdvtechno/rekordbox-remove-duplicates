@@ -1,4 +1,3 @@
-```markdown
 # M3U8 Playlist Duplicate Remover
 
 This Python script removes duplicate entries from an M3U8 playlist file by considering only the file names, ignoring the directory paths. This ensures that if a file with the same name exists in multiple folders, only one instance is kept in the cleaned playlist.
@@ -13,168 +12,127 @@ This Python script removes duplicate entries from an M3U8 playlist file by consi
    - Open **Command Prompt**:
      - Press `Win + R`, type `cmd`, and hit Enter.
    - Download and install Python using the following commands:
+
      ```bash
      curl -o python-installer.exe https://www.python.org/ftp/python/3.x.x/python-3.x.x-amd64.exe
      start python-installer.exe
      ```
+
    - During installation, make sure to check the box that says **"Add Python to PATH"**.
    - Follow the installation steps.
 
 2. **Verify Python Installation:**
    - In **Command Prompt**, type the following command and press Enter:
+
      ```bash
      python --version
      ```
+
    - You should see the Python version number, confirming that Python is installed.
 
 #### For macOS
 
 1. **Install Python via Terminal:**
-   - Open **Terminal**:
-     - Press `Cmd + Space`, type `Terminal`, and hit Enter.
-   - Install Homebrew if you haven't already:
+   - Open **Terminal**.
+   - Use the following command to install Python via Homebrew (if you don't have Homebrew installed, install it first with the following command):
+
      ```bash
      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
      ```
-   - Install Python using Homebrew:
+
+   - Then install Python:
+
      ```bash
      brew install python
      ```
 
 2. **Verify Python Installation:**
    - In **Terminal**, type the following command and press Enter:
+
      ```bash
      python3 --version
      ```
+
    - You should see the Python version number, confirming that Python is installed.
 
-### Step 2: Download the Script
+### Step 2: Export M3U8 Playlist from Rekordbox
+
+1. Open Rekordbox.
+2. Right-click on a playlist and select **Export Playlist**.
+3. Choose the format **M3U8** and save the file in the directory where the script is located.
+
+### Step 3: Clone the Repository
 
 #### For Windows
 
-1. **Clone the GitHub Repository:**
-   - In **Command Prompt**, navigate to the directory where you want to save the script:
+1. **Clone the repository using Command Prompt:**
+   - Open **Command Prompt**.
+   - Navigate to the desired directory where you want to clone the repository:
+
      ```bash
-     cd C:\path\to\desired\folder
+     cd path\to\your\directory
      ```
-   - Clone the repository using the following command:
+
+   - Run the following command to clone the repository:
+
      ```bash
      git clone https://github.com/your-username/m3u8-playlist-cleaner.git
+     ```
+
+   - Navigate to the cloned directory:
+
+     ```bash
+     cd m3u8-playlist-cleaner
      ```
 
 #### For macOS
 
-1. **Clone the GitHub Repository:**
-   - In **Terminal**, navigate to the directory where you want to save the script:
+1. **Clone the repository using Terminal:**
+   - Open **Terminal**.
+   - Navigate to the desired directory where you want to clone the repository:
+
      ```bash
-     cd /path/to/desired/folder
+     cd path/to/your/directory
      ```
-   - Clone the repository using the following command:
+
+   - Run the following command to clone the repository:
+
      ```bash
      git clone https://github.com/your-username/m3u8-playlist-cleaner.git
      ```
 
-### Step 3: Exporting an M3U8 Playlist from Rekordbox
+   - Navigate to the cloned directory:
 
-1. **Open Rekordbox:**
-   - Launch Rekordbox on your computer.
-
-2. **Select the Playlist:**
-   - In the **Playlist** section on the left sidebar, right-click the playlist you want to export.
-
-3. **Export as M3U8:**
-   - Choose **Export Playlist** from the context menu and select **M3U8** as the export format.
-   - Save the file as `playlist.m3u8` in the same directory where the script is located.
+     ```bash
+     cd m3u8-playlist-cleaner
+     ```
 
 ### Step 4: Run the Script
 
-#### For Windows
+1. **Ensure your M3U8 playlist file is named `playlist.m3u8` and is placed in the same directory as the script.**
 
-1. **Navigate to the Script Location:**
-   - In **Command Prompt**, navigate to the cloned repository:
-     ```bash
-     cd C:\path\to\desired\folder\m3u8-playlist-cleaner
-     ```
+2. **Run the script:**
 
-2. **Run the Script:**
-   - Type the following command and press Enter:
-     ```bash
-     python remove_m3u8_duplicates_by_filename.py
-     ```
-
-3. **Check the Output:**
-   - The script will create a new file called `cleaned_playlist.m3u8` in the same folder.
-
-#### For macOS
-
-1. **Navigate to the Script Location:**
-   - In **Terminal**, navigate to the cloned repository:
-     ```bash
-     cd /path/to/desired/folder/m3u8-playlist-cleaner
-     ```
-
-2. **Run the Script:**
-   - Type the following command and press Enter:
-     ```bash
-     python3 remove_m3u8_duplicates_by_filename.py
-     ```
-
-3. **Check the Output:**
-   - The script will create a new file called `cleaned_playlist.m3u8` in the same folder.
-
-### Step 5: Importing the Cleaned Playlist Back to Rekordbox
-
-1. **Open Rekordbox:**
-   - Launch Rekordbox on your computer.
-
-2. **Import the Cleaned Playlist:**
-   - In the **File** menu, choose **Import Playlist** and select the `cleaned_playlist.m3u8` file generated by the script.
-
-3. **Check for Duplicates:**
-   - The cleaned playlist will now appear in your Rekordbox library without duplicate entries.
-
-### Troubleshooting
-
-- **Command Not Found Error**: Ensure that Python is correctly installed and added to the system's PATH.
-- **Script Not Working**: Make sure the script and playlist file are in the same directory and the filenames match those mentioned in the instructions.
-
-### Conclusion
-
-Following these steps, you should be able to remove duplicate entries from your M3U8 playlist easily and re-import it into Rekordbox. If you encounter any issues, please consult the Python documentation or seek help from a more experienced user.
-
-## Features
-
-- Removes duplicate entries based on the file name.
-- Works with M3U8 playlist files.
-- Outputs a cleaned M3U8 playlist file.
-
-## Requirements
-
-- Python 3.x
-
-## Installation
-
-Clone this repository to your local machine:
-
-git clone https://github.com/your-username/m3u8-playlist-cleaner.git
-
-Navigate to the directory:
-
-cd m3u8-playlist-cleaner
-```
-
-
-## Usage
-
-1. Place your M3U8 playlist file in the same directory as the script and name it `playlist.m3u8`.
-
-2. Run the script:
+   #### For Windows:
 
    ```bash
    python remove_m3u8_duplicates_by_filename.py
    ```
 
-3. The script will create a new file called `cleaned_playlist.m3u8` in the same directory, containing the cleaned playlist without duplicate entries.
+   #### For macOS:
+
+   ```bash
+   python3 remove_m3u8_duplicates_by_filename.py
+   ```
+
+3. **The script will create a new file called `cleaned_playlist.m3u8` in the same directory, containing the cleaned playlist without duplicate entries.**
+
+### Step 5: Import the Cleaned Playlist Back to Rekordbox
+
+1. Open Rekordbox.
+2. Go to **File > Import Playlist**.
+3. Select the `cleaned_playlist.m3u8` file generated by the script.
+4. The cleaned playlist will be imported into Rekordbox.
 
 ## Example
 
@@ -211,10 +169,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Acknowledgments
 
 - This script was created to help manage large playlists by ensuring no duplicate entries exist, even if the files are located in different directories.
-```
-
-### Summary of Changes:
-- **Rekordbox Export Section**: Moved before running the script so users know how to create the M3U8 file needed by the script.
-- **Rekordbox Import Section**: Placed after running the script so users can import the cleaned playlist back into Rekordbox.
-
-This structure should help guide users more intuitively through the process.
